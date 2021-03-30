@@ -135,3 +135,51 @@ if ($month == 12 OR $month <=2) {
     echo "Осень";
 }
 echo '<br><br>';
+
+echo 'Задача №22 --- Решение: ';
+$year = 1600;
+if ($year % 4 == 0 && ($year % 100 != 0 || $year % 400 == 0)) {
+    echo "Высокосный";
+} else {
+    echo "Не высокосный";
+}
+echo '<br><br>';
+
+echo 'Задача №23 --- Решение: ';
+$str = 'abcde';
+if ($str[0] === 'a') {
+    echo "Да";
+} else {
+    echo "Нет";
+}
+echo '<br><br>';
+
+echo 'Задача №22 --- Решение: ';
+$year = 1600;
+if ($year % 4 == 0 && ($year % 100 != 0 || $year % 400 == 0)) {
+    echo "Высокосный";
+} else {
+    echo "Не высокосный";
+}
+echo '<br><br>';
+
+echo 'Задача №24 --- Решение: ';
+$str = '12345';
+if ($str[0] == 1 || $str[0] == 2 || $str[0] == 3) {
+    echo "Да";
+} else {
+    echo "Нет";
+}
+echo '<br><br>';
+
+echo 'Задача №25 --- Решение: ';
+$str = '123';
+echo $str[0]+$str[1]+$str[2];
+echo '<br><br>';
+
+echo 'Задача №26 --- Решение: ';
+$str = '123124';
+if (($str[0]+$str[1]+$str[2]) == ($str[3]+$str[4]+$str[5])) {
+    echo "Да";
+} else echo "Нет";
+echo '<br><br>';
