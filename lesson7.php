@@ -108,3 +108,206 @@ echo 'Задача №20 --- Решение:<br>';
 $str = 'aaabbccc';
 echo substr_replace(substr($str, 2, 5), '!!!', 0, 5);
 echo '<br><br>';
+
+echo 'Задача №21 --- Решение:<br>';
+$str = 'abc abc abc';
+echo strpos($str, 'b');
+echo '<br><br>';
+
+echo 'Задача №22 --- Решение:<br>';
+$str = 'abc abc abc';
+echo strrpos($str, 'b');
+echo '<br><br>';
+
+echo 'Задача №23 --- Решение:<br>';
+$str = 'abc abc abc';
+echo strpos($str, 'b', 3);
+echo '<br><br>';
+
+echo 'Задача №24 --- Решение:<br>';
+$str = 'aaa aaa aaa aaa aaa';
+echo strpos($str, ' ', 4);
+echo '<br><br>';
+
+echo 'Задача №25 --- Решение:<br>';
+$str = 'aaa..aaa aaa aaa aaa';
+if (strpos($str, '..')) echo "Есть";
+else echo "Нет";
+echo '<br><br>';
+
+echo 'Задача №26 --- Решение:<br>';
+$str = 'http://aaa..aaa aaa aaa aaa';
+if (strpos($str, 'http://') == 0) echo "Есть";
+else echo "Нет";
+echo '<br><br>';
+
+echo 'Задача №27 --- Решение:<br>';
+$str = 'html css php';
+$str = explode(' ', $str);
+
+echo '<pre>';
+var_dump($str);
+echo '</pre>';
+echo '<br><br>';
+
+echo 'Задача №28 --- Решение:<br>';
+$str = ['html', 'css', 'php'];
+$str = implode(',', $str);
+echo $str;
+echo '<br><br>';
+
+echo 'Задача №29 --- Решение:<br>';
+$date = '2013-12-31';
+$str = explode('-', $date);
+$str = $str[2].".".$str[1].".".$str[0];
+echo $str;
+echo '<br><br>';
+
+echo 'Задача №30 --- Решение:<br>';
+$date = '1234567890';
+$str = str_split($date, 2);
+
+echo '<pre>';
+var_dump($str);
+echo '</pre>';
+echo '<br><br>';
+
+echo 'Задача №31 --- Решение:<br>';
+$date = '1234567890';
+$str = str_split($date, 1);
+
+echo '<pre>';
+var_dump($str);
+echo '</pre>';
+echo '<br><br>';
+
+echo 'Задача №32 --- Решение:<br>';
+$date = '1234567890';
+$str = str_split($date, 2);
+$str = implode("-", $str);
+echo $str;
+echo '<br><br>';
+
+echo 'Задача №33 --- Решение:<br>';
+$str = ' 1234567890 ';
+echo trim($str);
+echo '<br><br>';
+
+echo 'Задача №34 --- Решение:<br>';
+$str = '/php/';
+echo trim($str, '/');
+echo '<br><br>';
+
+echo 'Задача №35 --- Решение:<br>';
+$str = 'слова слова слова.';
+$str = rtrim($str, '.');
+echo $str.".";
+echo '<br><br>';
+
+echo 'Задача №36 --- Решение:<br>';
+$str = '12345';
+echo strrev($str);
+echo '<br><br>';
+
+echo 'Задача №37 --- Решение:<br>';
+$str = 'otto';
+if ($str == strrev($str)) echo "Да";
+else echo "Нет";
+echo '<br><br>';
+
+echo 'Задача №38 --- Решение:<br>';
+$str = 'otto';
+echo str_shuffle($str);
+echo '<br><br>';
+
+echo 'Задача №39 --- Решение:<br>';
+$str = 'abcdefghijklmnopqrsxyuw';
+echo substr(str_shuffle($str), 0, 6);
+echo '<br><br>';
+
+echo 'Задача №40 --- Решение:<br>';
+$str = '12345678';
+echo number_format($str, 0, '', ' ');
+echo '<br><br>';
+
+echo 'Задача №41 --- Решение:<br>';
+$str = 'x';
+for($i=1; $i<=9; $i++) echo str_repeat($str, $i).'<br>';
+echo '<br><br>';
+
+echo 'Задача №42 --- Решение:<br>';
+for($i=1; $i<=9; $i++) echo str_repeat($i, $i).'<br>';
+echo '<br><br>';
+
+echo 'Задача №43 --- Решение:<br>';
+$str = 'html, <b>php</b>, js';
+echo $str=strip_tags($str);
+echo '<br><br>';
+
+echo 'Задача №44 --- Решение:<br>';
+$str = '<i>html</i>, <b>php</b>, <span>js</span>';
+echo $str=strip_tags($str, '<i><b>');
+echo '<br><br>';
+
+echo 'Задача №45 --- Решение:<br>';
+$str = 'html, <b>php</b>, js';
+echo htmlspecialchars($str);
+echo '<br><br>';
+
+echo 'Задача №46 --- Решение:<br>';
+echo ord('a')." ";
+echo ord('b')." ";
+echo ord('c')." ";
+echo ord(' ')." ";
+echo '<br><br>';
+
+echo 'Задача №48 --- Решение:<br>';
+echo chr(33)." ";
+echo '<br><br>';
+
+echo 'Задача №49 --- Решение:<br>';
+echo $str = chr(rand(65,90));
+echo '<br><br>';
+
+echo 'Задача №50 --- Решение:<br>';
+$len = 20;
+$str = '';
+while ($len > 0) {
+    $str .= chr(rand(97,122));
+    $len--;
+}
+echo $str;
+echo '<br><br>';
+
+echo 'Задача №51 --- Решение:<br>';
+$str = 'f';
+if (ord($str) >= 65 && ord($str) <= 90) echo "Большая";
+elseif (ord($str) >= 97 && ord($str) <= 122) echo "Маленькая";
+echo '<br><br>';
+
+echo 'Задача №52 --- Решение:<br>';
+$str = 'ab-cd-ef';
+echo strchr($str, '-');
+echo '<br><br>';
+
+echo 'Задача №53 --- Решение:<br>';
+$str = 'ab-cd-ef';
+echo strrchr($str, '-');
+echo '<br><br>';
+
+echo 'Задача №54 --- Решение:<br>';
+$str = 'ab--cd--ef';
+echo strstr($str, '--');
+echo '<br><br>';
+
+echo 'Задача №55 --- Решение:<br>';
+$str = 'var_test_text';
+echo str_replace(' ', '', lcfirst(ucwords(str_replace('_', ' ', $str))));
+echo '<br><br>';
+
+echo 'Задача №56 --- Решение:<br>';
+$arr = [1,2,3,4,535,33];
+foreach ($arr as $value) {
+   if(strstr($value, '3')) echo $value."<br>";
+}
+echo '<br><br>';
