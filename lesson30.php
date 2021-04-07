@@ -1,3 +1,7 @@
-<?php echo 'Задача №1 --- Решение:<br>';
+<?php
 
-echo '<br><br>'; ?>
+echo "index<br>";
+
+var_dump($_SERVER['REQUEST_URI']);
+
+?>

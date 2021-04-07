@@ -1,0 +1,56 @@
+RewriteEngine On
+RewriteBase /
+#1
+#Redirect 301 /phpTutorialNEW/lesson30/indexttt.php /phpTutorialNEW/lesson30/test.php
+
+#2
+#Redirect 301 /phpTutorialNEW/index1.php /phpTutorialNEW/1.php
+#Redirect 301 /phpTutorialNEW/index2.php /phpTutorialNEW/2.php
+#Redirect 301 /phpTutorialNEW/index3.php /phpTutorialNEW/lesson30.php
+
+#3
+#Redirect 301 /phpTutorialNEW/lesson30.php http://site.com
+
+#4
+#RewriteRule ^dir/ /phpTutorialNEW/lesson30.php
+
+#5
+#RewriteRule ^dir1/ /phpTutorialNEW/lesson30.php
+#RewriteRule ^dir2/ /phpTutorialNEW/lesson30.php
+
+#6
+#RewriteRule ^.*\.html$ /phpTutorialNEW/lesson30.php
+
+#7
+#RewriteRule ^.*[^/lesson30.php]\.php$ /phpTutorialNEW/lesson30.php
+
+#8
+#RewriteRule ^.*\.html$ /phpTutorialNEW/lesson30.php
+#RewriteRule ^.*[^/lesson30.php]\.php$ /phpTutorialNEW/lesson30.php
+
+#9
+#RewriteRule (.*).html$ /phpTutorialNEW/$1.php
+
+#10
+#RewriteRule (.*)$ http://site.com/$1
+
+#11
+#RedirectMatch index(.*)\.php$ /phpTutorialNEW/$1.php
+
+#12
+#RedirectMatch .*/dir/.* /phpTutorialNEW/lesson30.php
+
+#13
+#RedirectMatch .*dir.* /phpTutorialNEW/lesson30.php
+
+#14
+#RedirectMatch .*/dir/ /phpTutorialNEW/lesson30.php
+
+#15
+#RedirectMatch .*/test(\d).php$ /phpTutorialNEW/lesson30.php
+
+#16
+#RedirectMatch .*/test(\d).php$ /phpTutorialNEW/lesson30.php
+
+#17
+RedirectMatch .*/(\d)/.* /phpTutorialNEW/lesson30.php
