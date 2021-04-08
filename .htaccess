@@ -1,5 +1,6 @@
 RewriteEngine On
 RewriteBase /
+
 #1
 #Redirect 301 /phpTutorialNEW/lesson30/indexttt.php /phpTutorialNEW/lesson30/test.php
 
@@ -53,4 +54,31 @@ RewriteBase /
 #RedirectMatch .*/test(\d).php$ /phpTutorialNEW/lesson30.php
 
 #17
-RedirectMatch .*/(\d)/.* /phpTutorialNEW/lesson30.php
+#RedirectMatch .*/(\d)/.* /phpTutorialNEW/lesson30.php
+
+#18
+#RewriteRule !test.php /phpTutorialNEW/lesson30.php
+
+#19
+#RewriteRule !.html$ /phpTutorialNEW/lesson30.php
+
+#20
+#RewriteRule !/webroot/ /phpTutorialNEW/lesson30.php
+
+#21
+#RewriteCond %{REQUEST_URI} !\.html$
+#RewriteRule .+ /phpTutorialNEW/index.html
+
+#22
+#RewriteCond %{REQUEST_URI} \.html$
+#RewriteRule .+ /phpTutorialNEW/lesson30.php
+
+#23
+#RewriteCond %{REQUEST_URI} \.html$ 
+#RewriteCond %{REQUEST_URI} /content/
+#RewriteRule .+ /phpTutorialNEW/lesson30.php
+
+#23
+RewriteCond %{REQUEST_URI} \.html$ [OR]
+RewriteCond %{REQUEST_URI} \.php$
+RewriteRule .+ /phpTutorialNEW/index.html
