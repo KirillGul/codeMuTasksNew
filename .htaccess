@@ -77,8 +77,3 @@ RewriteBase /
 #RewriteCond %{REQUEST_URI} \.html$ 
 #RewriteCond %{REQUEST_URI} /content/
 #RewriteRule .+ /phpTutorialNEW/lesson30.php
-
-#23
-RewriteCond %{REQUEST_URI} \.html$ [OR]
-RewriteCond %{REQUEST_URI} \.php$
-RewriteRule .+ /phpTutorialNEW/index.html
