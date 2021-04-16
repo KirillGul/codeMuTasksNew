@@ -89,3 +89,9 @@ RewriteRule ^(.*)$ http://%1/$1 [R=301,QSA,L]
 #RewriteRule .+ /phpTutorialNEW/lesson30.php
 
 #### End Урок 30 ###
+
+#24 - такой вариант
+RewriteCond %{REQUEST_URI} !index.html$
+RewriteCond %{REQUEST_URI} \.html$ [OR]
+RewriteCond %{REQUEST_URI} \.php$
+RewriteRule .+ /index.html
