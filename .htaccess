@@ -1,5 +1,15 @@
+#### Begin Урок 30 ###
+
+#включаем механизам преобразований URL (относиться к mod_rewrite)
 RewriteEngine On
-RewriteBase /
+
+#Тест мой
+#редирект с www.site.ru на site.ru без www
+RewriteCond %{HTTP_HOST} ^www\.(.*) [NC]
+RewriteRule ^(.*)$ http://%1/$1 [R=301,QSA,L]
+
+#переопределить корень сайта, станет как "/"
+#RewriteBase /
 
 #1
 #Redirect 301 /phpTutorialNEW/lesson30/indexttt.php /phpTutorialNEW/lesson30/test.php
@@ -77,3 +87,5 @@ RewriteBase /
 #RewriteCond %{REQUEST_URI} \.html$ 
 #RewriteCond %{REQUEST_URI} /content/
 #RewriteRule .+ /phpTutorialNEW/lesson30.php
+
+#### End Урок 30 ###
