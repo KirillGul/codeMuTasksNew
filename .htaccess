@@ -12,86 +12,120 @@ RewriteRule ^(.*)$ http://%1/$1 [R=301,QSA,L]
 #RewriteBase /
 
 #1
-#Redirect 301 /phpTutorialNEW/lesson30/indexttt.php /phpTutorialNEW/lesson30/test.php
+#Redirect 301 /index.html http://codemutasks/lesson30.php
 
 #2
-#Redirect 301 /phpTutorialNEW/index1.php /phpTutorialNEW/1.php
-#Redirect 301 /phpTutorialNEW/index2.php /phpTutorialNEW/2.php
-#Redirect 301 /phpTutorialNEW/index3.php /phpTutorialNEW/lesson30.php
+#Redirect 301 /index1.php http://codemutasks/1.php
+#Redirect 301 /index2.php http://codemutasks/2.php
+#Redirect 301 /index3.php http://codemutasks/3.php
 
 #3
-#Redirect 301 /phpTutorialNEW/lesson30.php http://site.com
+#Redirect 301 /index1.php http://codemutasks
 
 #4
-#RewriteRule ^dir/ /phpTutorialNEW/lesson30.php
+#RewriteRule ^dir/.*$ /lesson30.php
 
 #5
-#RewriteRule ^dir1/ /phpTutorialNEW/lesson30.php
-#RewriteRule ^dir2/ /phpTutorialNEW/lesson30.php
+#RewriteRule ^dir1/.*$ /lesson30.php
+#RewriteRule ^dir2/.*$ /lesson30.php
 
 #6
-#RewriteRule ^.*\.html$ /phpTutorialNEW/lesson30.php
+#RewriteRule \.html$ /lesson30.php
 
 #7
-#RewriteRule ^.*[^/lesson30.php]\.php$ /phpTutorialNEW/lesson30.php
+#RewriteRule [^/lesson30.php]\.php$ /lesson30.php
 
 #8
-#RewriteRule ^.*\.html$ /phpTutorialNEW/lesson30.php
-#RewriteRule ^.*[^/lesson30.php]\.php$ /phpTutorialNEW/lesson30.php
+#RewriteRule [^/lesson30.php]\.(php|html)$ /lesson30.php
 
 #9
-#RewriteRule (.*).html$ /phpTutorialNEW/$1.php
+#RewriteRule (.*)\.html$ /$1.php
 
 #10
-#RewriteRule (.*)$ http://site.com/$1
+#RewriteRule (.*) http://site.com/$1
 
 #11
-#RedirectMatch index(.*)\.php$ /phpTutorialNEW/$1.php
+#RedirectMatch index(.*)\.php$ http://codemutasks/$1.php
 
 #12
-#RedirectMatch .*/dir/.* /phpTutorialNEW/lesson30.php
+#RedirectMatch .*/dir/.* http://codemutasks/lesson30.php
 
 #13
-#RedirectMatch .*dir.* /phpTutorialNEW/lesson30.php
+#RedirectMatch .*dir.* http://codemutasks/lesson30.php
 
 #14
-#RedirectMatch .*/dir/ /phpTutorialNEW/lesson30.php
+#RedirectMatch .*/dir/ http://codemutasks/lesson30.php
 
 #15
-#RedirectMatch .*/test(\d).php$ /phpTutorialNEW/lesson30.php
+#RedirectMatch .*/test(\d*).php$ http://codemutasks/lesson30.php
 
 #16
-#RedirectMatch .*/test(\d).php$ /phpTutorialNEW/lesson30.php
+#RedirectMatch .*/test(\d*).php$ http://codemutasks/lesson30.php
 
 #17
-#RedirectMatch .*/(\d)/.* /phpTutorialNEW/lesson30.php
+#RedirectMatch .*/(\d*)/.* http://codemutasks/lesson30.php
 
 #18
-#RewriteRule !test.php /phpTutorialNEW/lesson30.php
+#RewriteRule !(test|lesson30).php /lesson30.php
 
 #19
-#RewriteRule !.html$ /phpTutorialNEW/lesson30.php
+#RewriteRule !(\.html|lesson30.php)$ /lesson30.php
 
 #20
-#RewriteRule !/webroot/ /phpTutorialNEW/lesson30.php
+#RewriteRule !(^webroot/.*|lesson30.php) /lesson30.php
 
 #21
-#RewriteCond %{REQUEST_URI} !\.html$
-#RewriteRule .+ /phpTutorialNEW/index.html
+#RewriteCond %{REQUEST_URI} \.html$
+#RewriteRule .+ /lesson30.php
 
 #22
-#RewriteCond %{REQUEST_URI} \.html$
-#RewriteRule .+ /phpTutorialNEW/lesson30.php
+#RewriteCond %{REQUEST_URI} !\.html$
+#RewriteCond %{REQUEST_URI} !lesson30\.php$
+#RewriteRule .+ /lesson30.php
 
 #23
 #RewriteCond %{REQUEST_URI} \.html$ 
-#RewriteCond %{REQUEST_URI} /content/
-#RewriteRule .+ /phpTutorialNEW/lesson30.php
+#RewriteCond %{REQUEST_URI} ^/content/
+#RewriteRule .+ /lesson30.php
 
-#### End Урок 30 ###
+#24
+#RewriteCond %{REQUEST_URI} !^/lesson30.php$
+#RewriteCond %{REQUEST_URI} \.html$ [OR]
+#RewriteCond %{REQUEST_URI} \.php$
+#RewriteRule .+ /lesson30.php
 
-#24 - такой вариант
-RewriteCond %{REQUEST_URI} !index.html$
-RewriteCond %{REQUEST_URI} \.html$ [OR]
-RewriteCond %{REQUEST_URI} \.php$
-RewriteRule .+ /index.html
+#25
+#RewriteCond %{REQUEST_URI} !^/lesson30.php$
+#RewriteCond %{REQUEST_URI} \.css$ [OR]
+#RewriteCond %{REQUEST_URI} ^/styles/
+#RewriteRule .+ /lesson30.php
+
+#26
+#RewriteCond %{REQUEST_URI} !^/lesson30.php$
+#RewriteCond %{REQUEST_FILENAME} -f
+#RewriteRule .+ /lesson30.php
+
+#27
+#RewriteCond %{REQUEST_URI} !^/lesson30.php$
+#RewriteCond %{REQUEST_FILENAME} !-f
+#RewriteRule .+ /lesson30.php
+
+#28
+#RewriteCond %{REQUEST_FILENAME} -d
+#RewriteRule .+ /lesson30.php
+
+#29
+#RewriteCond %{REQUEST_FILENAME} !-d
+#RewriteRule .+ /lesson30.php
+
+#30
+#RewriteCond %{REQUEST_URI} !^/lesson30.php$
+#RewriteCond %{REQUEST_FILENAME} -f
+#RewriteCond %{REQUEST_URI} \.html$
+#RewriteRule .+ /lesson30.php
+
+#31
+RewriteCond %{REQUEST_URI} !^/lesson30.php$
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule .+ /lesson30.php
