@@ -125,7 +125,29 @@ RewriteRule ^(.*)$ http://%1/$1 [R=301,QSA,L]
 #RewriteRule .+ /lesson30.php
 
 #31
-RewriteCond %{REQUEST_URI} !^/lesson30.php$
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule .+ /lesson30.php
+#RewriteCond %{REQUEST_URI} !^/lesson30.php$
+#RewriteCond %{REQUEST_FILENAME} !-f
+#RewriteCond %{REQUEST_FILENAME} !-d
+#RewriteRule .+ /lesson30.php
+
+#32
+#RewriteBase /
+#RewriteRule ^lesson29.php$ lesson30.php [L]
+#RewriteRule .+ lesson30.php
+
+#33-34
+#RewriteBase /
+#RewriteCond %{REQUEST_URI} !^/lesson30\.php$
+#RewriteRule (.+) lesson30.php?get=$1
+
+#35
+#RewriteBase /
+#RewriteRule ^test.php$ lesson30.php [NC]
+
+#36
+#ErrorDocument 404 http://codemutasks/404.php
+
+#37
+#см.папка test/.htaccess
+
+#### End Урок 30 ###
