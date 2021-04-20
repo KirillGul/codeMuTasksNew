@@ -21,8 +21,21 @@ echo "Вы посетили страницу: ".$_COOKIE['count2']." раз.";
 echo "<br><br>";
 ?>
 
-<?php
-echo "Задача №4 --- Решение:<br>";
+<?php echo "Задача №4 --- Решение:<br>";
+if (isset($_REQUEST['rdat'])) {
+    $_COOKIE['rdat'] = $_REQUEST['rdat'];
 
-echo "<br><br>";
+    
+
+
+    echo "До дня рождения осталось "." дней.";
+} else {
+var_dump($_COOKIE);
 ?>
+<form>
+    Введите вашу дату рождения (в формате 31.12.2021): <input name='rdat'><br>
+    <input type="submit">
+</form>
+<?php 
+}
+echo "<br><br>"; ?>
