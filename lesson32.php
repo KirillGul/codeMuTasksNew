@@ -23,4 +23,23 @@ if (empty($_SESSION['str3'])) {
    $_SESSION['str3'] = 0;
 }
 else echo $_SESSION['str3'] += 1;
+echo "<br><br>";
+?>
+
+<?php
+echo "Задача №4,5,6 --- Решение:<br>";
+if (isset($_REQUEST['country'])) {
+   $_SESSION['country'] = $_REQUEST['country'];  
+}
+$_SESSION['time_second'] = date('s', time());
+$_SESSION['email'] = $_REQUEST['email'];
+?>
+<form>
+   Введите страну: <input name='country'><br>
+   Введите emeail: <input name='email' value='<?php if (isset($_SESSION['email'])) echo $_SESSION ['email']; ?>'><br>
+   <input type='submit'>
+</form>
+<?php
+echo "Время с момента захода на сайт: ".$_SESSION['time_second'];
+echo "<br><br>";
 ?>
