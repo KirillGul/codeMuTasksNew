@@ -24,18 +24,21 @@ echo "<br><br>";
 <?php echo "Задача №4 --- Решение:<br>";
 if (isset($_REQUEST['rdat'])) {
     $_COOKIE['rdat'] = $_REQUEST['rdat'];
-
-    
-
-
-    echo "До дня рождения осталось "." дней.";
-} else {
-var_dump($_COOKIE);
+    $RDAT = explode('.', $_COOKIE['rdat']);
+    $dateRDAT = date('z', mktime(0, 0, 0, $RDAT[1], $RDAT[0]))+1;
+    $dateNOW = date('z', time())+1;
+    if ($dateNOW > $dateRDAT) {
+        $dateRDAT = date('z', mktime(0, 0, 0, 12, 31)) -  $dateNOW + $dateRDAT;
+        echo "До дня рождения осталось ".$dateRDAT." дней.";
+    } elseif ($dateNOW < $dateRDAT) {
+        $dateRDAT = $dateRDAT - $dateNOW;
+        echo "До дня рождения осталось ".$dateRDAT." дней.";
+    } else echo "Ваш день рождения сегодня";
+}
 ?>
+<br><br>
 <form>
     Введите вашу дату рождения (в формате 31.12.2021): <input name='rdat'><br>
     <input type="submit">
 </form>
-<?php 
-}
-echo "<br><br>"; ?>
+<?php echo "<br><br>"; ?>
