@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 4.8.3
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Apr 21, 2021 at 07:07 PM
--- Server version: 5.7.29
--- PHP Version: 7.4.5
+-- Generation Time: Apr 22, 2021 at 08:37 AM
+-- Server version: 8.0.12
+-- PHP Version: 7.2.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -24,32 +25,36 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user`
+-- Table structure for table `workers`
 --
 
-CREATE TABLE `user` (
+CREATE TABLE `workers` (
   `id` int(11) NOT NULL,
-  `name` varchar(32) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name` varchar(32) NOT NULL,
   `age` int(11) NOT NULL,
-  `birthday` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  `salary` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
 
 --
--- Dumping data for table `user`
+-- Dumping data for table `workers`
 --
 
-INSERT INTO `user` (`id`, `name`, `age`, `birthday`) VALUES
-(1, 'Дмитрий', 33, '1987-12-09'),
-(2, 'Кирилл', 36, '1985-03-17');
+INSERT INTO `workers` (`id`, `name`, `age`, `salary`) VALUES
+(1, 'Дима', 23, 400),
+(2, 'Петя', 25, 500),
+(3, 'Вася', 23, 500),
+(4, 'Коля', 30, 1000),
+(5, 'Иван', 27, 500),
+(6, 'Кирилл', 28, 1000);
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `user`
+-- Indexes for table `workers`
 --
-ALTER TABLE `user`
+ALTER TABLE `workers`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -57,10 +62,10 @@ ALTER TABLE `user`
 --
 
 --
--- AUTO_INCREMENT for table `user`
+-- AUTO_INCREMENT for table `workers`
 --
-ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+ALTER TABLE `workers`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
