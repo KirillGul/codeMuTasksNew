@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Apr 22, 2021 at 08:37 AM
+-- Generation Time: Apr 22, 2021 at 12:09 PM
 -- Server version: 8.0.12
 -- PHP Version: 7.2.10
 
@@ -21,6 +21,29 @@ SET time_zone = "+00:00";
 --
 -- Database: `test`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pages`
+--
+
+CREATE TABLE `pages` (
+  `id` int(11) NOT NULL,
+  `athor` varchar(32) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `article` text
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `pages`
+--
+
+INSERT INTO `pages` (`id`, `athor`, `article`) VALUES
+(1, 'Петров', 'В своей статье рассказывает о машинах.'),
+(2, 'Иванов', 'Написал статью об инфляции.'),
+(3, 'Сидоров', 'Придумал новый химический элемент.'),
+(4, 'Осокина', 'Также писала о машинах.'),
+(5, 'Ветров', 'Написал статью о том, как разрабатывать элементы дизайна.');
 
 -- --------------------------------------------------------
 
@@ -52,6 +75,12 @@ INSERT INTO `workers` (`id`, `name`, `age`, `salary`) VALUES
 --
 
 --
+-- Indexes for table `pages`
+--
+ALTER TABLE `pages`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `workers`
 --
 ALTER TABLE `workers`
@@ -60,6 +89,12 @@ ALTER TABLE `workers`
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `pages`
+--
+ALTER TABLE `pages`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `workers`

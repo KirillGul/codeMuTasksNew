@@ -449,3 +449,54 @@ PHP_EOL
  glob('dir/?.txt');
 
 ////////////////////////////////////////////////////////////
+//Устанавливаем доступы к базе данных:
+$host = 'localhost'; //имя хоста, на локальном компьютере это localhost
+$user = 'root'; //имя пользователя, по умолчанию это root
+$password = ''; //пароль, по умолчанию пустой
+$db_name = 'test'; //имя базы данных
+
+//Соединяемся с базой данных используя наши доступы:
+mysqli_connect($host, $user, $password, $db_name) or die(mysqli_error($link));
+
+//Устанавливаем кодировку (не обязательно, но поможет избежать проблем):
+mysqli_query($link, "SET NAMES 'utf8'")
+
+SELECT - выборка из БД
+        SELECT * FROM имя_таблицы WHERE условие_по_которому_следует_выбрать_строки;
+        SELECT * FROM workers WHERE id > 0
+Более сложная логика: OR и AND
+        SELECT * FROM workers WHERE salary=500 AND age=23
+        SELECT * FROM workers WHERE salary=500 OR age=23
+INSERT - вставка данных в БД
+        INSERT INTO имя_таблицы SET поле1=значение1, поле2=значение2, поле3=значение3...;
+        INSERT INTO workers SET name='Гена', age=30, salary=1000
+
+        Другой синтаксис INSERT
+        INSERT INTO workers (поле1, поле2...) VALUES (значение1, значение2...)
+        INSERT INTO workers (name, age, salary) VALUES ('Гена', 30, 1000)
+
+        Массовая вставка через INSERT
+        INSERT INTO имя_таблицы (поле1, поле2...)
+		VALUES (значение1, значение2...), (значение1, значение2...)...
+        INSERT INTO workers (name, age, salary)
+		VALUES ('Гена', 30, 1000), ('Вася', 25, 500), ('Иван', 27, 1500)
+DELETE - удаление записей
+        DELETE FROM имя_таблицы WHERE условие_по_которому_следует_удалять_строки
+        DELETE FROM workers WHERE id=6
+UPDATE - обновление значений записей
+        UPDATE workers SET salary=1000 WHERE name='Дима'
+ORDER BY - сортировка
+        SELECT * FROM workers WHERE id>0 ORDER BY age
+        SELECT * FROM workers WHERE id>0 ORDER BY age DESC - обр.порядковый
+LIMIT — ограничение количества
+        SELECT * FROM workers WHERE id>0 LIMIT 2
+        SELECT * FROM workers WHERE id>0 LIMIT 2,5 - со 2-ой строки 5 штук
+COUNT — считаем количество
+        SELECT COUNT(*) as count FROM workers WHERE id>0
+        COUNT(*) - без пробелом
+LIKE - реализуем поиск
+        SELECT * FROM workers WHERE name LIKE '%я'
+        //ВЫБРАТЬ все ИЗ таблицы ГДЕ имя ПОДОБНО любой_строке_заканчивающейся_на_я
+Кавычки ``
+        проблемные слова следует брать в косые кавычки
+        SELECT * FROM `from`
