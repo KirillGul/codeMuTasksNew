@@ -11,10 +11,21 @@ foreach ($arr as $val) {
 }
 echo '<br><br>'; ?>
 
-<?php echo 'Задача №3,4,5 --- Решение:<br>';
+<?php echo 'Задача №3,4,5,6 --- Решение:<br>';
+
 if (isset($_GET['page'])) {
    $pages = $_GET['page'];
-   include "45/$pages.php";
+   $path = "45/$pages.php";
+   if (file_exists($path))
+      include $path;
+   else
+      echo "Нет такого файла";
 }
 echo '<br><br>'; ?>
 <a href="?page=1">Октрыть 1.php</a>
+
+<?php echo 'Задача №7- --- Решение:<br>';
+
+echo '<br><br>'; ?>
+
+<a href="45/index.php">Мини движок</a>
