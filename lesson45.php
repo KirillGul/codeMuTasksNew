@@ -24,7 +24,7 @@ if (isset($_GET['page'])) {
 echo '<br><br>'; ?>
 <a href="?page=1">Октрыть 1.php</a>
 
-<?php echo 'Задача №7- --- Решение:<br>';
+<?php echo 'Задача №7-14 --- Решение:<br>';
 
 echo '<br><br>'; ?>
 
