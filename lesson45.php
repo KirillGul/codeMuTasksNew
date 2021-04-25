@@ -29,3 +29,5 @@ echo '<br><br>'; ?>
 echo '<br><br>'; ?>
 
 <a href="45/index.php">Мини движок</a>
+
+<a href="http://mengine">Мини движок (mengine)</a>
